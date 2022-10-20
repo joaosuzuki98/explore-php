@@ -12,7 +12,7 @@ const mostraData = () => {
     let dia = dataAtual.getDay()
     let mes = dataAtual.getMonth() + 1
     let ano = dataAtual.getFullYear()
-    let valor = ano + '-' + mes + '-' + dia
+    let valor = dia + '/' + mes + '/' + ano
 
     document.getElementById('dt-cadastro').value = valor
 }

@@ -12,7 +12,7 @@ $cidade = $_POST['cidade'];
 $destinos = $_POST['destinos'];
 $hospedagem = $_POST['hospedagem'];
 $mensagem = $_POST['mensagem'];
-$dt_cadastro = date('Y-m-d');
+$dt_cadastro = $_POST['dt-cadastro'];
 
 // Para investigar variáveis e expressões
 // var_dump($_POST);
@@ -35,7 +35,7 @@ try {
         ':destinos' => $destinos,
         ':hospedagem' => $hospedagem,
         ':mensagem' => $mensagem,
-        ':dt_cadastro' => $dt_cadastro
+        ':dt_cadastro' => date('Y-m-d', strtotime($dt_cadastro))
     ));
 
     echo '<h1>Usuário cadastro</h1>';
@@ -44,6 +44,4 @@ try {
 } catch (PDOException $erro) {
     // Se der erro, exibe o erro aqui
     echo $erro;
-    var_dump($_POST);
-
 }
