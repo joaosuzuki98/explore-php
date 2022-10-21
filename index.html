@@ -78,7 +78,7 @@
   </header>
 
   <main class="col-lg-10 offset-lg-1">
-
+    
     <section id="banner-topo" class="d-none d-md-block margin-px">
       <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
@@ -138,6 +138,11 @@
         </button>
       </div>
     </section>
+
+    <div id="msg" class="d-none alert alert-secondary alert-dismissible fade show" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <strong>Usuário cadastro</strong>
+    </div>
 
     <section id="bora" class="my-4 bg-folhas-left">
       <h2 class="text-center fw-bold text-uppercase fs-1 txt-laranja">Bora lá</h2>
@@ -492,6 +497,13 @@
 
   <!-- Nosso JS -->
   <script src="js/custom.js"></script>
+
+  <script>
+    var alertList = document.querySelectorAll('.alert');
+    alertList.forEach(function (alert) {
+      new bootstrap.Alert(alert)
+    })
+  </script>
 </body>
 
 </html>

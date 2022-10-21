@@ -32,14 +32,14 @@ try {
         ':idade' => $idade,
         ':estado' => $estado,
         ':cidade' => $cidade,
-        ':destinos' => $destinos,
+        ':destinos' => implode(', im', $destinos), // Converte array em texto
         ':hospedagem' => $hospedagem,
         ':mensagem' => $mensagem,
         ':dt_cadastro' => date('Y-m-d', strtotime($dt_cadastro))
     ));
 
-    echo '<h1>Usuário cadastro</h1>';
-    var_dump($_POST);
+    // Carrega a página index.html envinado varia´vel GET cadastro
+    header('Location: index.html?cadastro=ok');
 
 } catch (PDOException $erro) {
     // Se der erro, exibe o erro aqui

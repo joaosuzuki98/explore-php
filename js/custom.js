@@ -1,4 +1,20 @@
 // Funções
+
+// Ao carregar a página verifica o parâmetro "cadastro" se o valor for "ok" exibe um alert
+const urlParams = new URLSearchParams(window.location.search)
+var parCadastro = urlParams.get('cadastro')
+console.log(parCadastro)
+
+if(parCadastro == 'ok') {
+    let listaClasses = document.getElementById('msg').classList
+    listaClasses.remove('d-none')
+    // window.location.href = '/explore-php'
+}
+
+const aviso = (msg) => {
+    alert(msg);
+}
+
 const mostraIdade = () => {
     let span = document.getElementById('txt-idade')
     let campoIdade = document.getElementById('idade')
